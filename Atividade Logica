@@ -1,0 +1,19 @@
+def vender_produto(estoque, produto_id, quantidade):
+    if 0 <= produto_id < len(estoque):
+        if estoque[produto_id] >= quantidade:
+            estoque[produto_id] -= quantidade
+
+def adicionar_estoque(estoque, produto_id, quantidade):
+    if 0 <= produto_id < len(estoque):
+        estoque[produto_id] += quantidade
+
+def exibir_estoque(estoque):
+    print("Estoque atual:")
+    for i, quantidade in enumerate(estoque):
+        print(f"Produto {i + 1}: {quantidade} unidades")
+
+estoque = [20, 15, 10, 30, 5]
+vender_produto(estoque, 0, 3)
+vender_produto(estoque, 3, 2)
+adicionar_estoque(estoque, 4, 10)
+exibir_estoque(estoque)
